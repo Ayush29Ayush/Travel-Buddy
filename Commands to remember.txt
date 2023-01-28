@@ -3,3 +3,4 @@
 3. Using Expo Go app for Android
 4. Use "R" to reload and rebuild bundle to reflect changes or in code section press "Ctrl+R"
 5. TailWind setup using documentation and install TailWind extension
+6. Press "Alt+Z" for word wrap
