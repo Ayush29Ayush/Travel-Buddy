@@ -11,7 +11,7 @@ export default function App() {
   return (
     <TailwindProvider>
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator screenOptions={{headerTitleAlign: 'center'}}>
           <Stack.Screen name="Home" component={HomeScreen} />
         </Stack.Navigator>
       </NavigationContainer>
