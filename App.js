@@ -1,20 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { SafeAreaView, Text, View } from "react-native";
+import { TailwindProvider } from "tailwindcss-react-native";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Ayush Senapati Hello World Hahaha</Text>
-      <StatusBar style="auto" />
-    </View>
+    <TailwindProvider>
+      <SafeAreaView className="flex-1 items-center justify-center">
+        <Text className = "text-red-500">Hey There, Test App Version:01</Text>
+        <StatusBar style="auto" />
+      </SafeAreaView>
+    </TailwindProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
