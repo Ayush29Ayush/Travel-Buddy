@@ -1,0 +1,4 @@
+1. Yarn is better and less likely to gibe errors unlike npm
+2. Using Expo since user friendly for beginners
+3. Using Expo Go app for Android
+4. Use "R" to reload and rebuild bundle to reflect changes or in code section press "Ctrl+R"
