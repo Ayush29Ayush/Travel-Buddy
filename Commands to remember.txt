@@ -5,3 +5,5 @@
 5. TailWind setup using documentation and install TailWind extension
 6. Press "Alt+Z" for word wrap
 7. React Navigation => Routing and navigation for Expo and React Native apps. Installation and setup using docs.
+8. Make folder names according to the exports from tailwind.config.js
+9. Install ES7+ extension for using snippets. "rnfe" command => ReactNativeFunctionalExport component.
