@@ -8,3 +8,4 @@
 8. Make folder names according to the exports from tailwind.config.js
 9. Install ES7+ extension for using snippets. "rnfe" command => ReactNativeFunctionalExport component.
 10. <Stack.Navigator screenOptions={{headerTitleAlign: 'center'}}> to center the text in header.
+11. <View> is similar to <div> and <Text> is similar to <h1>, <h2>, etc.
