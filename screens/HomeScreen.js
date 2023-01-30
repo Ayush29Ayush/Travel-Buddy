@@ -29,6 +29,10 @@ const HomeScreen = () => {
         <Text className="text-[#00BCC9] text-[35px] font-extrabold">Travel Buddy</Text>
         <Text className="text-slate-500">Travel Buddy is the ultimate travel advisor app for all your vacation needs. From planning to booking, we've got you covered.</Text>
       </View>
+
+      {/* Third Section - Circle */}
+      <View className="w-[300px] h-[300px] bg-[#00BCC9] rounded-full absolute bottom-8 -right-32"></View>
+      <View className="w-[300px] h-[300px] bg-[#E99265] rounded-full absolute -bottom-28 -left-32"></View>
     </SafeAreaView>
   );
 };
