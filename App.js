@@ -4,6 +4,7 @@ import { TailwindProvider } from "tailwindcss-react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./screens/HomeScreen";
+import Discover from "./screens/Discover";
 
 const Stack = createNativeStackNavigator(); // will be used to navigate between pages
 
@@ -13,6 +14,7 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="Discover" component={Discover} />
         </Stack.Navigator>
       </NavigationContainer>
     </TailwindProvider>
