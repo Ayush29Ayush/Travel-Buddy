@@ -55,15 +55,17 @@ const HomeScreen = () => {
           source={HeroImage}
           className="w-full h-full object-cover mt-5"
         />
-        <View className="absolute bottom-20 w-29 h-29 border-l-2 border-r-2 border-t-4 border-[#00BCC9] rounded-full item-center justify-center">
-          <TouchableOpacity>
-            <View className="w-24 h-24 items-center justify-center rounded-full bg-[#00BCC9]">
-              <Text className="text-gray-300 text-[54px] font-semibold">
-                Go
-              </Text>
-            </View>
-          </TouchableOpacity>
-        </View>
+
+        <TouchableOpacity className="absolute bottom-20 w-29 h-29 border-l-2 border-r-2 border-t-4 border-[#00BCC9] rounded-full item-center justify-center">
+          <Animatable.View
+            animation="pulse"
+            easing="ease-in-out"
+            iterationCount={"infinite"}
+            className="w-24 h-24 items-center justify-center rounded-full bg-[#00BCC9]"
+          >
+            <Text className="text-gray-300 text-[54px] font-semibold">Go</Text>
+          </Animatable.View>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
