@@ -56,7 +56,10 @@ const HomeScreen = () => {
           className="w-full h-full object-cover mt-5"
         />
 
-        <TouchableOpacity className="absolute bottom-20 w-29 h-29 border-l-2 border-r-2 border-t-4 border-[#00BCC9] rounded-full item-center justify-center">
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Discover")}
+          className="absolute bottom-20 w-29 h-29 border-l-2 border-r-2 border-t-4 border-[#00BCC9] rounded-full item-center justify-center"
+        >
           <Animatable.View
             animation="pulse"
             easing="ease-in-out"
