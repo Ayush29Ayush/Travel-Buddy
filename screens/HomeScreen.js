@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import React, { useLayoutEffect } from "react";
+import * as Animatable from "react-native-animatable";
 import { useNavigation } from "@react-navigation/native";
 import { HeroImage, trialpic } from "../assets";
 
@@ -48,7 +49,12 @@ const HomeScreen = () => {
 
       {/* Fourth Section - Image */}
       <View className="flex-1 relative items-center justify-center">
-        <Image source={HeroImage} className="w-full h-full object-cover mt-5" />
+        <Animatable.Image
+          animation="fadeIn"
+          easing="ease-in-out"
+          source={HeroImage}
+          className="w-full h-full object-cover mt-5"
+        />
         <View className="absolute bottom-20 w-29 h-29 border-l-2 border-r-2 border-t-4 border-[#00BCC9] rounded-full item-center justify-center">
           <TouchableOpacity>
             <View className="w-24 h-24 items-center justify-center rounded-full bg-[#00BCC9]">
