@@ -4,6 +4,9 @@ import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplet
 import { useNavigation } from "@react-navigation/native";
 import { Avatar, Avatar1 } from "../assets";
 
+// require('dotenv').config()
+const API_KEY = process.env.REACT_APP_API_KEY
+
 const Discover = () => {
   const navigation = useNavigation();
 
@@ -22,8 +25,28 @@ const Discover = () => {
         </View>
 
         <View className="w-14 h-14 bg-gray-400 rounded-md items-center justify-center shadow-lg">
-          <Image source={Avatar1} className="w-full h-full rounded-md object-cover"/>
+          <Image
+            source={Avatar1}
+            className="w-full h-full rounded-md object-cover"
+          />
         </View>
+      </View>
+
+      <View className="flex-row items-center bg-white-300 mx-4 rounded-xl py-1 px-4 shadow-lg mt-4">
+        {/* <Text>hello</Text> */}
+        <GooglePlacesAutocomplete
+          GooglePlacesDetailsQuery={{ fields: "geometry" }}
+          placeholder="Search"
+          fetchDetails={true}
+          onPress={(data, details = null) => {
+            // 'details' is provided when fetchDetails = true
+            console.log(details?.geometry?.viewport);
+          }}
+          query={{
+            key: API_KEY,
+            language: "en",
+          }}
+        />
       </View>
     </SafeAreaView>
   );
