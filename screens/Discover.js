@@ -1,6 +1,7 @@
-import { View, Text, SafeAreaView } from "react-native";
+import { View, Text, SafeAreaView, Image } from "react-native";
 import React, { useLayoutEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
+import { Avatar, Avatar1 } from "../assets";
 
 const Discover = () => {
   const navigation = useNavigation();
@@ -19,8 +20,8 @@ const Discover = () => {
           <Text className="text-[#527283] text-[30px]">the beauty today</Text>
         </View>
 
-        <View className="w-12 h-12 bg-gray-400 rounded-md items-center justify-center">
-          
+        <View className="w-14 h-14 bg-gray-400 rounded-md items-center justify-center shadow-lg">
+          <Image source={Avatar1} className="w-full h-full rounded-md object-cover"/>
         </View>
       </View>
     </SafeAreaView>
