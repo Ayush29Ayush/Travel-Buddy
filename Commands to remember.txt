@@ -12,3 +12,5 @@
 12. In <Image> source can have "uri" for online image link, or else direct image passing is also allowed.
 13. Using react-native-animatable for animations.
 14. In webdev => OnClick={} but in app-dev => onPress={}
+15. Use react-native-google-places-autocomplete in searchbox.
+16. Use RapidAPI to get diff types of API.
