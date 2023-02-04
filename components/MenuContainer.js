@@ -1,12 +1,12 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text, TouchableOpacity } from "react-native";
+import React from "react";
 
-const MenuContainer = () => {
+const MenuContainer = (title, imageSrc, type, setType) => {
   return (
-    <View>
-      <Text>MenuContainer</Text>
-    </View>
-  )
-}
+    <TouchableOpacity className="items-center justify-center space-y-2">
+      <View>MenuContainer</View>
+    </TouchableOpacity>
+  );
+};
 
-export default MenuContainer
+export default MenuContainer;
