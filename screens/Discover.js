@@ -1,15 +1,18 @@
 import { View, Text, SafeAreaView, Image, ScrollView } from "react-native";
-import React, { useLayoutEffect } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import { useNavigation } from "@react-navigation/native";
-import { Avatar, Avatar1 } from "../assets";
+import { Avatar, Avatar1, Hotels } from "../assets";
 import MenuContainer from "../components/MenuContainer";
 
 // require('dotenv').config()
-const API_KEY = process.env.REACT_APP_API_KEY
+const API_KEY = process.env.REACT_APP_API_KEY;
 
 const Discover = () => {
   const navigation = useNavigation();
+
+  // default state is restaurants
+  const [type, setType] = useState("restaurants");
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -53,11 +56,13 @@ const Discover = () => {
       {/* Menu Container */}
       <ScrollView>
         <View className="flex-row items-center justify-center px-8 mx-8 bg-red-300">
-          <MenuContainer 
+          <MenuContainer
             key={"hotel"}
             title="Hotels"
-            imageSrc=""
-            />
+            imageSrc={Hotels}
+            type={type}
+            setType={setType}
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
