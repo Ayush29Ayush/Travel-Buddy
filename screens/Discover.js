@@ -1,8 +1,9 @@
-import { View, Text, SafeAreaView, Image } from "react-native";
+import { View, Text, SafeAreaView, Image, ScrollView } from "react-native";
 import React, { useLayoutEffect } from "react";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import { useNavigation } from "@react-navigation/native";
 import { Avatar, Avatar1 } from "../assets";
+import MenuContainer from "../components/MenuContainer";
 
 // require('dotenv').config()
 const API_KEY = process.env.REACT_APP_API_KEY
@@ -48,6 +49,17 @@ const Discover = () => {
           }}
         />
       </View>
+
+      {/* Menu Container */}
+      <ScrollView>
+        <View className="flex-row items-center justify-center px-8 mx-8 bg-red-300">
+          <MenuContainer 
+            key={"hotel"}
+            title="Hotels"
+            imageSrc=""
+            />
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
