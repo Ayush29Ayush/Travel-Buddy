@@ -2,7 +2,7 @@ import { View, Text, SafeAreaView, Image, ScrollView } from "react-native";
 import React, { useLayoutEffect, useState } from "react";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import { useNavigation } from "@react-navigation/native";
-import { Avatar, Avatar1, Hotels } from "../assets";
+import { Attractions, Avatar, Avatar1, Hotels, Restaurants } from "../assets";
 import MenuContainer from "../components/MenuContainer";
 
 // require('dotenv').config()
@@ -55,11 +55,27 @@ const Discover = () => {
 
       {/* Menu Container */}
       <ScrollView>
-        <View className="flex-row items-center justify-center px-8 mx-8 bg-red-300">
+        <View className="flex-row items-center justify-between px-8 mt-8">
           <MenuContainer
-            key={"hotel"}
+            key={"hotels"}
             title="Hotels"
             imageSrc={Hotels}
+            type={type}
+            setType={setType}
+          />
+
+          <MenuContainer
+            key={"attractions"}
+            title="Attractions"
+            imageSrc={Attractions}
+            type={type}
+            setType={setType}
+          />
+
+          <MenuContainer
+            key={"restaurants"}
+            title="Restaurants"
+            imageSrc={Restaurants}
             type={type}
             setType={setType}
           />
