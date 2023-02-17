@@ -1,10 +1,19 @@
-import { View, Text, SafeAreaView, Image, ScrollView, Touchable, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  SafeAreaView,
+  Image,
+  ScrollView,
+  Touchable,
+  TouchableOpacity,
+} from "react-native";
 import React, { useLayoutEffect, useState } from "react";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import { useNavigation } from "@react-navigation/native";
 import { Attractions, Avatar, Avatar1, Hotels, Restaurants } from "../assets";
 import MenuContainer from "../components/MenuContainer";
-import { FontAwesome } from '@expo/vector-icons';
+import { FontAwesome } from "@expo/vector-icons";
+import ItemCardContainer from "../components/ItemCardContainer";
 
 // require('dotenv').config()
 const API_KEY = process.env.REACT_APP_API_KEY;
@@ -84,17 +93,35 @@ const Discover = () => {
 
         <View>
           <View className="flex-row items-center justify-between px-4 mt-8">
-            <Text className="text-[#2C7379] text-[28px] font-bold">Top Tips</Text>
+            <Text className="text-[#2C7379] text-[28px] font-bold">
+              Top Tips
+            </Text>
             <TouchableOpacity className="flex-row items-center justify-center space-x-2">
-              <Text className="text-[#A0C4C7] text-[20px] font-bold">Explore</Text>
+              <Text className="text-[#A0C4C7] text-[20px] font-bold">
+                Explore
+              </Text>
               <FontAwesome name="long-arrow-right" size={24} color="#A0C4C7" />
             </TouchableOpacity>
           </View>
 
           <View className="px-4 mt-8 flex-row items-center justify-evenly flex-wrap">
-
+            <ItemCardContainer
+              key={"101"}
+              imageSrc={
+                "https://cdn.pixabay.com/photo/2023/02/13/18/47/landscape-7788090__480.jpg"
+              }
+              title="Something"
+              location="Doha"
+            />
+            <ItemCardContainer
+              key={"102"}
+              imageSrc={
+                "https://cdn.pixabay.com/photo/2023/02/13/18/47/landscape-7788090__480.jpg"
+              }
+              title="Sample"
+              location="Qatar"
+            />
           </View>
-
         </View>
       </ScrollView>
     </SafeAreaView>
