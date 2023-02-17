@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const ItemCarContainer = () => {
+const ItemCardContainer = () => {
   return (
     <View>
       <Text>ItemCarContainer</Text>
@@ -9,4 +9,4 @@ const ItemCarContainer = () => {
   )
 }
 
-export default ItemCarContainer
+export default ItemCardContainer
