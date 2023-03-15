@@ -11,7 +11,7 @@ import {
 import React, { useLayoutEffect, useState } from "react";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import { useNavigation } from "@react-navigation/native";
-import { Attractions, Avatar, Avatar1, Hotels, Restaurants } from "../assets";
+import { Attractions, Avatar, Avatar1, Hotels, Restaurants, NotFound } from "../assets";
 import MenuContainer from "../components/MenuContainer";
 import { FontAwesome } from "@expo/vector-icons";
 import ItemCardContainer from "../components/ItemCardContainer";
@@ -25,6 +25,7 @@ const Discover = () => {
   // default state is restaurants
   const [type, setType] = useState("restaurants");
   const [isLoading, setIsLoading] = useState(false);
+  const [mainData, setMainData] = useState([]);
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -112,7 +113,7 @@ const Discover = () => {
           </View>
 
           <View className="px-4 mt-8 flex-row items-center justify-evenly flex-wrap">
-            <ItemCardContainer
+            {/* <ItemCardContainer
               key={"101"}
               imageSrc={
                 "https://cdn.pixabay.com/photo/2023/02/13/18/47/landscape-7788090__480.jpg"
@@ -127,7 +128,36 @@ const Discover = () => {
               }
               title="Sample"
               location="Qatar"
-            />
+            /> */}
+            {mainData?.length > 0 ? (
+                <>
+                  {mainData?.map((data, i) => (
+                    <ItemCarDontainer
+                      key={i}
+                      imageSrc={
+                        data?.photo?.images?.medium?.url
+                          ? data?.photo?.images?.medium?.url
+                          : "https://cdn.pixabay.com/photo/2015/10/30/12/22/eat-1014025_1280.jpg"
+                      }
+                      title={data?.name}
+                      location={data?.location_string}
+                      data={data}
+                    />
+                  ))}
+                </>
+              ) : (
+                <>
+                  <View className="w-full h-[400px] items-center space-y-8 justify-center">
+                    <Image
+                      source={NotFound}
+                      className=" w-32 h-32 object-cover"
+                    />
+                    <Text className="text-2xl text-[#428288] font-semibold">
+                      Opps...No Data Found
+                    </Text>
+                  </View>
+                </>
+              )}
           </View>
         </View>
       </ScrollView>
