@@ -4,10 +4,10 @@
     "slug": "Go-Travel-React-Native",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/trialpic.png",
+    "icon": "./assets/trialpic1.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/trialpic.png",
+      "image": "./assets/trialpic1.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
