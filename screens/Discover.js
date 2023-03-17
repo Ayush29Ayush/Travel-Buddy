@@ -8,13 +8,14 @@ import {
   TouchableOpacity,
   ActivityIndicator
 } from "react-native";
-import React, { useLayoutEffect, useState } from "react";
+import React, { useLayoutEffect, useState, useEffect } from "react";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import { useNavigation } from "@react-navigation/native";
 import { Attractions, Avatar, Avatar1, Hotels, Restaurants, NotFound } from "../assets";
 import MenuContainer from "../components/MenuContainer";
 import { FontAwesome } from "@expo/vector-icons";
 import ItemCardContainer from "../components/ItemCardContainer";
+import { getPlacesData } from "../api";
 
 // require('dotenv').config()
 const API_KEY = process.env.REACT_APP_API_KEY;
@@ -30,6 +31,16 @@ const Discover = () => {
   useLayoutEffect(() => {
     navigation.setOptions({
       headerShown: false,
+    });
+  }, []);
+
+  useEffect(() => {
+    setIsLoading(true);
+    getPlacesData().then((data) => {
+      setMainData(data);
+      setInterval(() => {
+        setIsLoading(false);
+      }, 2000);
     });
   }, []);
 
@@ -132,7 +143,7 @@ const Discover = () => {
             {mainData?.length > 0 ? (
                 <>
                   {mainData?.map((data, i) => (
-                    <ItemCarDontainer
+                    <ItemCardContainer
                       key={i}
                       imageSrc={
                         data?.photo?.images?.medium?.url
