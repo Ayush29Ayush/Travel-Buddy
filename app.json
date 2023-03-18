@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Go-Travel-React-Native",
-    "slug": "Go-Travel-React-Native",
+    "name": "Travel-Buddy-React-Native",
+    "slug": "Travel-Buddy-React-Native",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/trialpic1.png",
