@@ -173,7 +173,7 @@ const Discover = () => {
                       className=" w-32 h-32 object-cover"
                     />
                     <Text className="text-2xl text-[#428288] font-semibold">
-                      Opps...No Data Found
+                      Oops...No Data Found
                     </Text>
                   </View>
                 </>
